@@ -2,10 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Layout from '@/layouts/Layout.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
+const routes = [
+  {
       path: '/',
       name: 'main',
       redirect: {name: 'home'},
@@ -38,7 +36,11 @@ const router = createRouter({
         },
       ]
     }
-  ],
-})
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 
 export default router
