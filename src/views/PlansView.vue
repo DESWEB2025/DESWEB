@@ -1,26 +1,29 @@
 <template>
-  <div class="flex justify-center">
+  <div class="container mx-auto px-4 py-8">
     <div
-      v-for="plan in plans"
-      :key="plan.name"
-      class="neon-blue flex flex-col gap-4 bg-[#bbbaf8] p-6 rounded max-w-sm w-full m-10 border-2 border-[#2b0f66]"
+      class="flex flex-wrap justify-center gap-6"
     >
-      <h1 class="font-mono font-bold text-2xl text-center text-[#291f90]">
-        {{ plan.name }}
-      </h1>
-      <p class="text-center text-xl text-[#1a1254] font-bold">
-        ${{ plan.precio }}
-      </p>
-      <ul>
-        <li
-          v-for="i in plan.content"
-          :key="i"
-          class="text-serif text-l font-semibold"
-        >
-          -{{ i }}
-        </li>
-      </ul>
-      
+      <div
+        v-for="plan in plans"
+        :key="plan.name"
+        class="neon-blue flex flex-col gap-4 bg-[#bbbaf8] p-6 rounded max-w-sm w-full sm:w-[300px] md:w-[350px] border-2 border-[#2b0f66]"
+      >
+        <h1 class="font-mono font-bold text-2xl text-center text-[#291f90]">
+          {{ plan.name }}
+        </h1>
+        <p class="text-center text-xl text-[#1a1254] font-bold">
+          ${{ plan.precio }}
+        </p>
+        <ul>
+          <li
+            v-for="i in plan.content"
+            :key="i"
+            class="text-serif text-l font-semibold"
+          >
+            - {{ i }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

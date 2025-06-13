@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center gap-20 ml-10 sm:ml-20">
+  <div class="flex flex-col justify-center gap-20 ml-5 sm:ml-20">
     <h1 class="text-7xl sm:text-6xl md:text-7xl lg:text-9xl font-mono font-bold text-[#4c71ab]">
       DesWeb
     </h1>

@@ -1,13 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black to-[#22165f] flex justify-end items-center py-4 px-6">
-    <nav class="flex items-center gap-6">
-      <RouterLink :to="{ name: 'home' }" class="text-white font-bold">Inicio</RouterLink>
-      <RouterLink :to="{ name: 'contact' }" class="text-white font-bold">Contáctanos</RouterLink>
-      <RouterLink :to="{ name: 'about' }" class="text-white font-bold">Nosotros</RouterLink>
-    </nav>
-  </header>
-
-  <div class="star-container">
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
     <img
       v-for="(star, i) in stars"
       :key="i"
@@ -19,24 +11,37 @@
         animationDelay: star.delay + 's'
       }"
     />
-
-    <main class="mt-20 pb-20">
-      <RouterView />
-    </main>
   </div>
 
-  <footer class="fixed bottom-0 left-0 w-full flex flex-col gap-5 justify-center items-center bg-gradient-to-r from-black to-[#22165f] py-3 z-40">
-    <p class="text-l font-serif font-bold italic text-white">Código que conecta...</p>
-  </footer>
+  <div class="relative z-10">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black to-[#22165f] flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <img src="/src/assets/icon.jpeg" class="w-10 h-10" />
+      </div>
+      <nav class="flex items-center gap-6">
+        <RouterLink :to="{ name: 'home' }" class="text-white font-bold">Inicio</RouterLink>
+        <RouterLink :to="{ name: 'contact' }" class="text-white font-bold">Contáctanos</RouterLink>
+        <RouterLink :to="{ name: 'about' }" class="text-white font-bold">Nosotros</RouterLink>
+      </nav>
+    </header>
+
+    <main class="pt-24 pb-20 min-h-screen">
+      <RouterView />
+    </main>
+
+    <footer class="w-full flex flex-col gap-5 justify-center items-center bg-gradient-to-r from-black to-[#22165f] py-3 z-40">
+      <p class="text-l font-serif font-bold italic text-white">Código que conecta...</p>
+    </footer>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      stars: Array.from({ length: 20 }, () => ({
-        top: (Math.random() * 90).toFixed(2),
-        left: (Math.random() * 90).toFixed(2),
+      stars: Array.from({ length: 30 }, () => ({
+        top: (Math.random() * 100).toFixed(2),
+        left: (Math.random() * 100).toFixed(2),
         delay: (Math.random() * 4).toFixed(2),
       })),
     };
@@ -45,19 +50,12 @@ export default {
 </script>
 
 <style scoped>
-.star-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 0;
-}
-
 .star {
   position: absolute;
   width: 20px;
   height: 20px;
   animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.8;
 }
 
 @keyframes twinkle {
@@ -71,7 +69,7 @@ export default {
   }
   100% {
     transform: scale(1);
-    opacity: 0;
+    opacity: 0.8;
   }
 }
 </style>
