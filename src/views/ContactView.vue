@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center p-6">
-    <form @submit.prevent="onSubmit" class="flex flex-col gap-3 bg-[#bbbaf8] p-6 rounded shadow max-w-xl w-full">     
+    <form @submit.prevent="onSubmit" class="flex flex-col gap-3 bg-[#bbbaf8] p-6 mt-10 rounded shadow max-w-xl w-full">     
       <div>
         <label class="block font-semibold">Nombre</label>
         <input v-model="name" type="text" placeholder="Tu nombre" required class="w-full border rounded px-3 py-2" />
