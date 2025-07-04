@@ -1,12 +1,15 @@
 <template>
   <div class="container mx-auto px-4 py-8">
+
+    <h1 class="text-white text-xl font-semibold mb-15">Pregunta por nuestros planes a tu necesidad</h1>
+
     <div
       class="flex flex-wrap justify-center gap-6"
     >
       <div
         v-for="plan in plans"
         :key="plan.name"
-        class="neon-blue flex flex-col gap-4 bg-[#bbbaf8] p-6 rounded max-w-sm w-full sm:w-[300px] md:w-[350px] border-2 border-[#2b0f66]"
+        class="neon-blue flex flex-col gap-4 bg-[#aaadf7] p-6 rounded max-w-sm w-full sm:w-[300px] md:w-[350px] border-2 border-[#2b0f66]"
       >
         <h1 class="font-mono font-bold text-2xl text-center text-[#291f90]">
           {{ plan.name }}
@@ -33,30 +36,31 @@ const plans = {
   basico: {
     name: "Básico",
     content: [
-      "Página web informativa (inicio, contacto, contenido del negocio)",
+      "Página web informativa (ubicación, inicio, contacto, etc. según el negocio)",
       "Diseño responsivo",
       "Formulario de contacto",
-      "Página escalable",
+      "Diseñada a tu negocio",
     ],
-    precio: 800,
+    precio: 1200,
   },
   intermedio: {
     name: "Intermedio",
     content: [
-      "Plan básico",
-      "Panel de administrador (control del contenido de tu página)",
+      "Todo el contenido del plan básico",
+      "Panel administrativo para el control del contenido web",
+      "Documentación del uso del panel administrativo",
       "Integración a redes sociales",
     ],
-    precio: 1500,
+    precio: 5000,
   },
   Avanzado: {
     name: "Avanzado",
     content: [
-      "Plan básico e intermedio",
-      "Registro e ingreso de usuarios",
-      "Tienda en línea o gestión de citas",
+      "Todo el contenido del plan intermedio y básico",
+      "Registro y entrada de usuarios",
+      "Tienda en línea menor a 50 productos",
       "Pasarela de pago",
-      "Panel administrativo",
+      "Panel administrativo de usuarios/productos",
     ],
     precio: 15000,
   },
@@ -65,7 +69,7 @@ const plans = {
 
 <style scoped>
 .neon-blue {
-  box-shadow: 0 0 10px rgba(0, 132, 255, 0.2), 0 0 20px rgba(0, 132, 255, 0.1),
-    0 0 40px rgba(0, 132, 255, 0.2);
+  box-shadow: 0 0 5px rgba(0, 132, 255, 0.1), 0 0 20px rgba(0, 132, 255, 0.1),
+    0 0 40px rgba(0, 132, 255, 0.1);
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
-  <div class="flex justify-center p-6  min-h-screen">
-    <form @submit.prevent="onSubmit" class="flex flex-col gap-4 bg-[#bbbaf8] p-6 rounded shadow max-w-xl w-full">
-      
+  <div class="flex justify-center p-6">
+    <form @submit.prevent="onSubmit" class="flex flex-col gap-3 bg-[#bbbaf8] p-6 rounded shadow max-w-xl w-full">     
       <div>
         <label class="block font-semibold">Nombre</label>
         <input v-model="name" type="text" placeholder="Tu nombre" required class="w-full border rounded px-3 py-2" />
@@ -20,7 +19,7 @@
         <p v-if="errors.message" class="text-red-500 text-sm">{{ errors.message }}</p>
       </div>
 
-      <button type="submit" class="bg-[#22165f] text-white rounded px-4 py-2 hover:bg-blue-600">
+      <button type="submit" class="bg-[#22165f] text-white rounded py-2 hover:bg-blue-600">
         Enviar
       </button>
 

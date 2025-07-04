@@ -1,30 +1,40 @@
 <template>
-    <h1 class="text-white text-2xl text-center">Trabajando en la pagina...</h1>
+    <div class="container mx-auto px-4 py-8">
+    <h1 class="text-white text-3xl font-semibold mb-15">Revisa nuestro trabajo</h1>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div
+        v-for="project in projects"
+        :key="project.type"
+        class="flex flex-col gap-4 bg-[#aaadf7] p-2 rounded max-w-sm w-full sm:w-[300px] md:w-[500px] border-2 border-[#2b0f66]"
+      >
+      <h2 class="text-xl text-[#3f337c] font-saens font-bold text-center">Paquete: {{ project.type }} </h2>
+      <a 
+      :href="project.link" 
+      class="text-l text-[#261e48] font-bold text-center">
+      Click para ver el proyecto
+      </a>
+      <img :src="project.img" alt="imagen del proyecto"/>     
+      </div>
+    </div>
+    </div>
 </template>
 
 <script setup>
 const projects = {
     basic:{
         type: "Basico",
-        link: "https://blog.hubspot.es/website/landing-page-ejemplos",
-        img:""
+        link: "https://www.sarasgoodies.com/",
+        img:"/src/assets/projects/ProyectoBasico.jpg"
     },
     intermediate:{
         type: "Intermedio",
-        link: "",
-        img:""
+        link: "https://skydivemexico.mx/",
+        img:"/src/assets/projects/ProyectoIntermedio.jpg"
     },
     advanced:{
         type: "Avanzado",
-        link: "",
-        img:""
+        link: "https://www.smartfit.com.mx/",
+        img:"/src/assets/projects/ProyectoAvanzado.jpg"
     }
 }
 </script>
-
-<style scoped>
-.neon-blue {
-  box-shadow: 0 0 10px rgba(0, 132, 255, 0.2), 0 0 20px rgba(0, 132, 255, 0.1),
-    0 0 40px rgba(0, 132, 255, 0.2);
-}
-</style>

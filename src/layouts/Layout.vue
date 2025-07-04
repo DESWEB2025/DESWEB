@@ -17,11 +17,15 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black to-[#22165f] flex justify-between items-center py-4 px-6">
       <div class="flex items-center">
         <img src="/src/assets/icon.jpeg" class="w-10 h-10" />
+        <h1 class="text-xl sm:text-6xl md:text-xl lg:text-4xl font-mono font-bold text-[#4c71ab]">
+          DesWeb
+        </h1>
       </div>
       <nav class="flex items-center gap-6">
         <RouterLink :to="{ name: 'home' }" class="text-white font-bold">Inicio</RouterLink>
-        <RouterLink :to="{ name: 'contact' }" class="text-white font-bold">Contáctanos</RouterLink>
+        <RouterLink :to="{ name: 'plans' }" class="text-white font-bold">Paquetes</RouterLink>
         <RouterLink :to="{ name: 'about' }" class="text-white font-bold">Nosotros</RouterLink>
+        <RouterLink :to="{ name: 'contact' }" class="text-white font-bold">Contáctanos</RouterLink>
       </nav>
     </header>
 
