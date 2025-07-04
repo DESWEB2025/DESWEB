@@ -20,21 +20,25 @@
 </template>
 
 <script setup>
+import ProyectoBasico from '@/assets/projects/ProyectoBasico.jpg'
+import ProyectoIntermedio from '@/assets/projects/ProyectoIntermedio.jpg'
+import ProyectoAvanzado from '@/assets/projects/ProyectoAvanzado.jpg'
+
 const projects = {
     basic:{
         type: "Basico",
         link: "https://www.sarasgoodies.com/",
-        img:"/src/assets/projects/ProyectoBasico.jpg"
+        img: ProyectoBasico
     },
     intermediate:{
         type: "Intermedio",
         link: "https://skydivemexico.mx/",
-        img:"/src/assets/projects/ProyectoIntermedio.jpg"
+        img: ProyectoIntermedio
     },
     advanced:{
         type: "Avanzado",
         link: "https://www.smartfit.com.mx/",
-        img:"/src/assets/projects/ProyectoAvanzado.jpg"
+        img: ProyectoAvanzado
     }
 }
 </script>
